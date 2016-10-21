@@ -22,7 +22,7 @@ class Tree{
 		T data;
 		//has left and right pointers to the children
 		Tree *left, *right;
-		
+
 		//function prototypes for the class functions
 		Tree();
 		Tree(T *newData);
@@ -137,17 +137,13 @@ void Tree<T>::breadth(char value[]){
 	queue<Tree> myQueue;
 	Tree currentTree;
 	data.print(value);
-	if(left != NULL)
-		myQueue.push(*left);
-	if(right != NULL)
-		myQueue.push(*right);
+	if(left != NULL) myQueue.push(*left);
+	if(right != NULL) myQueue.push(*right);
 	do{
 		currentTree = myQueue.front();
 		myQueue.pop();
 		currentTree.data.print(value);
-		if(currentTree.left != NULL)
-			myQueue.push(*(currentTree.left));
-		if(currentTree.right != NULL)
-			myQueue.push(*(currentTree.right));
+		if(currentTree.left != NULL) myQueue.push(*(currentTree.left));
+		if(currentTree.right != NULL) myQueue.push(*(currentTree.right));
 	}while(!myQueue.empty());
 }
